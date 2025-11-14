@@ -96,17 +96,23 @@ npm run test:ui
 
 ## 🗺️ Application Structure & Routing
 
-This application uses **React Router** for navigation between different pages. The app is organized into two main pages:
+This application uses **React Router** for navigation between different pages. The app is organized into three main pages:
 
 ### Page Structure
 
-1. **Registration Page** (`/`)
+1. **Welcome Page** (`/`)
+   - Landing page with welcome message
+   - Overview of features and savings tiers
+   - Call-to-action buttons to navigate to Registration or Dashboard
+   - First page students see when visiting the application
+
+2. **Registration Page** (`/registration`)
    - Student registration form
    - Tier selection and validation
    - Weekly interest preview
    - Week advancement controls
 
-2. **Dashboard Page** (`/dashboard`)
+3. **Dashboard Page** (`/dashboard`)
    - Total savings overview
    - Member details table
    - Withdrawal management
@@ -127,6 +133,7 @@ The application uses:
 **Key Files:**
 - `src/App.tsx`: Main app component with route definitions
 - `src/context/SavingsGroupContext.tsx`: Shared state management
+- `src/pages/WelcomePage.tsx`: Welcome/landing page component
 - `src/pages/RegistrationPage.tsx`: Registration page component
 - `src/pages/DashboardPage.tsx`: Dashboard page component
 - `src/components/Navigation.tsx`: Navigation component
@@ -135,14 +142,24 @@ The application uses:
 
 ### Navigation Between Pages
 
-1. **Use the Navigation Bar**: Click "📝 Registration" or "📊 Dashboard" in the top navigation
-2. **Direct URLs**: You can navigate directly to:
-   - `http://localhost:5173/` - Registration page
+1. **Start at Welcome Page**: When you first visit the app, you'll see the Welcome page with an overview
+2. **Use the Navigation Bar**: Click "🏠 Home", "📝 Registration", or "📊 Dashboard" in the top navigation
+3. **Direct URLs**: You can navigate directly to:
+   - `http://localhost:5173/` - Welcome/Home page
+   - `http://localhost:5173/registration` - Registration page
    - `http://localhost:5173/dashboard` - Dashboard page
+4. **Welcome Page Actions**: Use the "Get Started" button to go to Registration or "View Dashboard" to see current members
 
-### 1. Register a Student (Registration Page)
+### 1. Start at Welcome Page
 
-1. Navigate to the **Registration** page (default home page)
+1. When you first visit the application, you'll see the **Welcome Page**
+2. Read the welcome message and overview of features
+3. Review the three savings tiers available
+4. Click **"Get Started"** to proceed to registration, or **"View Dashboard"** to see current members
+
+### 2. Register a Student (Registration Page)
+
+1. Navigate to the **Registration** page (from Welcome page or navigation)
 2. Enter the student's name in the "Student Name" field
 3. Select a savings tier (Tier 1, 2, or 3)
 4. Enter the amount matching the selected tier:
@@ -156,7 +173,7 @@ The application uses:
 
 **Note**: The form validates that the amount matches the selected tier. If it doesn't match, you'll see an error message.
 
-### 2. View the Dashboard (Dashboard Page)
+### 3. View the Dashboard (Dashboard Page)
 
 1. Navigate to the **Dashboard** page using the top navigation
 2. View the summary cards showing:
@@ -172,7 +189,7 @@ The application uses:
    - Accumulated interest
    - Total withdrawal amount
 
-### 3. Simulate Weekly Progress (Registration Page)
+### 4. Simulate Weekly Progress (Registration Page)
 
 1. On the **Registration** page, find the "Weekly Progress" section
 2. Click the "Advance to Week X" button
@@ -185,7 +202,7 @@ The application uses:
 - Weekly Interest: 500 Naira
 - After 3 weeks: 10,000 + (500 × 3) = **11,500 Naira**
 
-### 4. Withdraw Funds (Dashboard Page)
+### 5. Withdraw Funds (Dashboard Page)
 
 1. Navigate to the **Dashboard** page
 2. Find the student in the member details table
@@ -208,8 +225,10 @@ web3bridgetest/
 │   │   ├── Navigation.tsx    # Navigation component
 │   │   └── *.css            # Component styles
 │   ├── pages/               # Page components (routing)
+│   │   ├── WelcomePage.tsx
 │   │   ├── RegistrationPage.tsx
 │   │   ├── DashboardPage.tsx
+│   │   ├── WelcomePage.css
 │   │   └── Pages.css
 │   ├── context/             # React Context for state management
 │   │   └── SavingsGroupContext.tsx

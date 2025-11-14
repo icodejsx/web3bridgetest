@@ -15,6 +15,12 @@ export function Navigation() {
             to="/"
             className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
           >
+            🏠 Home
+          </Link>
+          <Link
+            to="/registration"
+            className={`nav-link ${location.pathname === '/registration' ? 'active' : ''}`}
+          >
             📝 Registration
           </Link>
           <Link
