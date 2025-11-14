@@ -285,17 +285,34 @@ npm test
 
 ### Vercel
 
-1. **Install Vercel CLI** (optional)
+The project includes a `vercel.json` configuration file for proper routing support.
+
+1. **Connect to Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Sign in with your GitHub account
+   - Click "Add New Project"
+   - Import your GitHub repository
+
+2. **Vercel will automatically detect:**
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+   - Framework Preset: Vite
+
+3. **Deploy**
+   - Click "Deploy"
+   - Vercel will build and deploy automatically
+   - Your app will be live at `https://your-project.vercel.app`
+
+4. **Important Notes:**
+   - The `vercel.json` file handles client-side routing
+   - All routes will redirect to `index.html` for React Router to work
+   - The base path in `vite.config.ts` is commented out for Vercel (uncomment for GitHub Pages)
+
+5. **Using Vercel CLI** (optional)
    ```bash
    npm i -g vercel
-   ```
-
-2. **Deploy**
-   ```bash
    vercel
    ```
-
-   Or connect your GitHub repository directly on [vercel.com](https://vercel.com)
 
 ## 🛠️ Technologies Used
 
