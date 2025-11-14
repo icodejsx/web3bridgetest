@@ -38,7 +38,7 @@ export function DashboardPage() {
   return (
     <div className="page-container">
       <div className="page-header">
-        <h1>📊 Savings Dashboard</h1>
+        <h1> Savings Dashboard</h1>
         <p className="page-description">
           View total savings, member contributions, accumulated interests, and manage withdrawals.
         </p>
