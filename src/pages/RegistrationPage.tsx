@@ -28,7 +28,7 @@ export function RegistrationPage() {
     <div className="page-container">
       <div className="page-header">
         <h1> Student Registration</h1>
-        <p className="page-description">
+        <p className="page-description color-white text-white!important">
           Register new students to join the savings group. Select a tier and enter the correct
           amount to get started.
         </p>
